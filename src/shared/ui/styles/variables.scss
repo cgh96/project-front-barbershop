@@ -1,0 +1,18 @@
+@use "colors";
+
+/** Concept */
+$primary: #d5aa77;
+
+/** Text */
+$txt-basic: colors.$black;
+
+/** Button */
+$btn-basic-bg: colors.$white;
+$btn-basic-txt: colors.$black;
+
+/** Font */
+$font-x-small-size: 8px;
+$font-small-size: 12px;
+$font-medium-size: 16px;
+$font-large-size: 20px;
+$font-x-large-size: 24px;

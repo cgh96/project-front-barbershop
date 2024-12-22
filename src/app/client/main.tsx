@@ -1,11 +1,21 @@
-import "@app/styles/index.css";
+import { browserRouter } from "@app/config/router";
+import "@shared/ui/styles/reset.scss";
 
-import App from "@app/client/App";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router";
 
+/** CSR */
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={browserRouter} />
   </StrictMode>
 );
+
+/** SSR */
+// hydrateRoot(
+//   document,
+//   <StrictMode>
+//     <RouterProvider router={router} />
+//   </StrictMode>
+// );
