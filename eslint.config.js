@@ -1,36 +1,47 @@
-import js from "@eslint/js";
-import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
-  { ignores: ["dist"] },
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   {
-    extends: [
-      "plugin:prettier/recommended",
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-    ],
-    files: ["**/*.{ts,tsx}"],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+    languageOptions: { globals: globals.browser },
+  },
+
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  {
+    plugins: {
+      simpleImportSort,
+      reactHooks,
+      reactRefresh,
     },
-    plugins: ["simple-import-sort", "react-hooks", "react-refresh"],
     rules: {
       /** react */
-      ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": [
+      "reactHooks/exhaustive-deps": "error",
+      "reactHooks/rules-of-hooks": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "reactRefresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
 
       /** typescript */
       "@typescript-eslint/consistent-type-definitions": "error",
+      "@typescript-eslint/consistent-type-imports": "error",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "error",
 
       /** import */
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      "simpleImportSort/imports": "error",
+      "simpleImportSort/exports": "error",
     },
-  }
-);
+  },
+];

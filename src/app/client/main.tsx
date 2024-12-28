@@ -1,6 +1,6 @@
-import { browserRouter } from "@app/config/router";
 import "@shared/ui/styles/reset.scss";
 
+import { browserRouter } from "@app/config/router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";

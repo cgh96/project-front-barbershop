@@ -1,7 +1,8 @@
 import { Barber } from "@pages/barber/Barber";
 import { BarberShop } from "@pages/barberShop/BarberShop";
 import { Home } from "@pages/home/Home";
-import { createBrowserRouter, RouteObject } from "react-router";
+import type { RouteObject } from "react-router";
+import { createBrowserRouter } from "react-router";
 
 export const RoutePath = {
   Home: "/",

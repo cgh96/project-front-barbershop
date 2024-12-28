@@ -1,5 +1,7 @@
-import { TBaseButtonSize, TBaseButtonVariant } from "@shared/config";
 import "./BaseButton.scss";
+
+import type { TBaseButtonSize, TBaseButtonVariant } from "@shared/config";
+import { BaseButtonSize } from "@shared/config";
 
 type ButtonProps = {
   label: string;
@@ -10,7 +12,7 @@ type ButtonProps = {
 export const BaseButton: React.FC<ButtonProps> = ({
   label,
   variant,
-  size,
+  size = BaseButtonSize.Medium,
   ...props
 }) => {
   const className = `base-btn ${variant} ${size}`;
