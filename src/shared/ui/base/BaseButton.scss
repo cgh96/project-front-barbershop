@@ -1,0 +1,30 @@
+.base-btn {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.primary {
+  background-color: variables.$primary;
+}
+
+.secondary {
+}
+
+.disabled {
+}
+
+.warning {
+}
+
+.large {
+}
+
+.medium {
+  font-size: variables.$font-medium;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.small {
+}

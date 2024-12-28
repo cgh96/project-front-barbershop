@@ -1,18 +1,20 @@
-@use "colors";
-
-/** Concept */
+/** Palette */
 $primary: #d5aa77;
 
-/** Text */
-$txt-basic: colors.$black;
+$black: #000;
+$white: #fff;
 
-/** Button */
-$btn-basic-bg: colors.$white;
-$btn-basic-txt: colors.$black;
+$gray-300: #3c3c43;
+$gray-1200: #c1c1c1;
+$gray-1300: #d9d9d9;
+
+$blue-200: #223866;
 
 /** Font */
-$font-x-small-size: 8px;
-$font-small-size: 12px;
-$font-medium-size: 16px;
-$font-large-size: 20px;
-$font-x-large-size: 24px;
+$font-xx-small: 10px;
+$font-x-small: 12px;
+$font-small: 14px;
+$font-medium: 16px;
+$font-large: 18px;
+$font-x-large: 20px;
+$font-xx-large: 22px;

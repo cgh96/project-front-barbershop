@@ -8,7 +8,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "src/shared/ui/styles/variables.scss";`,
+        api: "modern-compiler", // vite 최신 버전(6버전)은 modern API를 default로 설정함. (현재 프로젝트 5.4버전),
+        additionalData: `@use "/src/shared/ui/styles/variables.scss";\n`,
       },
     },
   },
