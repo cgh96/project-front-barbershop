@@ -16,3 +16,11 @@ export const BaseButtonSize = {
 
 export type TBaseButtonSize =
   (typeof BaseButtonSize)[keyof typeof BaseButtonSize];
+
+export const BaseHeaderStyle = {
+  Primary: "primary",
+  Secondary: "secondary",
+} as const;
+
+export type TBasesHeaderStyle =
+  (typeof BaseHeaderStyle)[keyof typeof BaseHeaderStyle];
