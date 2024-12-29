@@ -1,13 +1,13 @@
 import "./BaseButton.scss";
 
-import type { TBaseButtonSize, TBaseButtonVariant } from "@shared/config";
-import { BaseButtonSize } from "@shared/config";
+import type { TBaseButtonSize, TBaseButtonVariant } from "@shared/types";
+import { BaseButtonSize } from "@shared/types";
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   variant: TBaseButtonVariant;
   size: TBaseButtonSize;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
 export const BaseButton: React.FC<ButtonProps> = ({
   label,
