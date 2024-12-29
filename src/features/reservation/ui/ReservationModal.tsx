@@ -25,7 +25,7 @@ export const ReserveationModal: React.FC<ReservationModalProps> = ({
   const CloseBtn = () => {
     const close = () => {
       setAnimation(ModalAnimation.SlideDown);
-      setTimeout(() => onClickClose(), 300);
+      setTimeout(() => onClickClose(), 200);
     };
 
     return (
