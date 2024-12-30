@@ -1,10 +1,11 @@
 import "./Chip.scss";
 
-export type ChipProps = {
+export interface ChipProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   mainLabel: string;
   subLabel?: string;
   selected?: boolean;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
 export const Chip: React.FC<ChipProps> = ({
   mainLabel,

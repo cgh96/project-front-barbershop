@@ -1,0 +1,37 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-self: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: variables.$black-alpha10;
+
+  .slide-up {
+    animation: slide-up 0.2s ease-out forwards;
+  }
+
+  .slide-down {
+    animation: slide-down 0.2s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.2s ease-out forwards;
+  }
+
+  .slide-out-left {
+    animation: slide-out-left 0.2s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.2s ease-out forwards;
+  }
+
+  .slide-out-right {
+    animation: slide-out-right 0.2s ease-out forwards;
+  }
+}
