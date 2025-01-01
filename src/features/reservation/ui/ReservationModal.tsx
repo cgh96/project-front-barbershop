@@ -4,6 +4,7 @@ import CloseIcon from "@assets/buttons/x-icon.svg?react";
 import type { TModalAnimation } from "@shared/types";
 import { ModalAnimation } from "@shared/types";
 import { BaseHeader } from "@shared/ui/base/BaseHeader";
+import { Calendar } from "@shared/ui/calendar/Calendar";
 import { BackDrop } from "@shared/ui/modal/BackDrop";
 import { FullScreenModal } from "@shared/ui/modal/FullScreenModal";
 import { useState } from "react";
@@ -14,7 +15,7 @@ interface ReservationModalProps {
   onClickClose: () => void;
 }
 
-export const ReserveationModal: React.FC<ReservationModalProps> = ({
+export const ReservationModal: React.FC<ReservationModalProps> = ({
   title,
   onClickClose,
 }) => {
@@ -42,6 +43,7 @@ export const ReserveationModal: React.FC<ReservationModalProps> = ({
           Left={<CloseBtn />}
           Center={<span style={{ padding: "13px 0" }}>{title}</span>}
         />
+        <Calendar />
       </FullScreenModal>
     </BackDrop>,
     document.body
