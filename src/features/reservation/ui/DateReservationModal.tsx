@@ -9,6 +9,8 @@ import { FullScreenModal } from "@shared/ui/modal/FullScreenModal";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
+import { HairServiceSelector } from "./HairServiceSelector";
+
 interface DateReservationModalProps {
   onClickClose: () => void;
 }
@@ -32,6 +34,8 @@ export const DateReserveationModal: React.FC<DateReservationModalProps> = ({
           Left={<CloseBtn onClick={close} />}
           Center={<span style={{ padding: "13px 0" }}>날짜로 예약하기</span>}
         />
+
+        <HairServiceSelector />
       </FullScreenModal>
     </BackDrop>,
     document.body
