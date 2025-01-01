@@ -1,19 +1,23 @@
-import "./Chip.scss";
+import "./BaseChip.scss";
+
+import { BaseChipVariant, type TBaseChipVariant } from "@shared/types";
 
 export interface ChipProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: TBaseChipVariant;
   mainLabel: string;
   subLabel?: string;
   selected?: boolean;
 }
 
-export const Chip: React.FC<ChipProps> = ({
+export const BaseChip: React.FC<ChipProps> = ({
   mainLabel,
   subLabel,
   selected = false,
+  variant = BaseChipVariant.Primary,
   ...props
 }: ChipProps) => {
-  const className = `chip ${selected ? "selected" : ""}`;
+  const className = `chip ${variant} ${selected ? "selected" : ""}`;
 
   return (
     <button className={className} type="button" onClick={props.onClick}>

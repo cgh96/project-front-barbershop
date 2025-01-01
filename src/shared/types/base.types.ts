@@ -17,10 +17,18 @@ export const BaseButtonSize = {
 export type TBaseButtonSize =
   (typeof BaseButtonSize)[keyof typeof BaseButtonSize];
 
-export const BaseHeaderStyle = {
+export const BaseHeaderVariant = {
   Primary: "primary",
   Secondary: "secondary",
 } as const;
 
-export type TBasesHeaderStyle =
-  (typeof BaseHeaderStyle)[keyof typeof BaseHeaderStyle];
+export type TBasesHeaderVariant =
+  (typeof BaseHeaderVariant)[keyof typeof BaseHeaderVariant];
+
+export const BaseChipVariant = {
+  Primary: "primary",
+  Black: "black",
+} as const;
+
+export type TBaseChipVariant =
+  (typeof BaseChipVariant)[keyof typeof BaseChipVariant];

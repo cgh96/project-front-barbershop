@@ -1,6 +1,11 @@
 import { RoutePath } from "@app/config/router";
-import { BaseButtonSize, BaseButtonVariant } from "@shared/types";
+import {
+  BaseButtonSize,
+  BaseButtonVariant,
+  BaseChipVariant,
+} from "@shared/types";
 import { BaseButton } from "@shared/ui/base/BaseButton";
+import { BaseChip } from "@shared/ui/base/BaseChip";
 import { Page } from "@shared/ui/layout/page/Page";
 import { useNavigate } from "react-router";
 
@@ -9,6 +14,12 @@ export const Home = () => {
 
   return (
     <Page>
+      <BaseChip
+        mainLabel="메인"
+        subLabel="특기"
+        variant={BaseChipVariant.Black}
+        selected={true}
+      />
       <BaseButton
         label="바버페이지로 이동"
         variant={BaseButtonVariant.Primary}
