@@ -9,21 +9,23 @@
   border-radius: 100px;
   border: 1px solid variables.$gray-1400;
 
-  .main-label {
-    display: inline-block;
-    font-size: variables.$font-medium;
-    font-weight: 400;
-  }
+  &.primary {
+    .main-label {
+      display: inline-block;
+      font-size: variables.$font-medium;
+      font-weight: 400;
+    }
 
-  .sub-label {
-    display: inline-block;
-    padding: 4px 10px;
+    .sub-label {
+      display: inline-block;
+      padding: 4px 10px;
 
-    background-color: variables.$blue-200-alpha10;
-    font-size: variables.$font-x-small;
-    font-weight: bold;
-    color: variables.$white;
-    border-radius: 3px;
+      background-color: variables.$blue-200-alpha10;
+      font-size: variables.$font-x-small;
+      font-weight: bold;
+      color: variables.$white;
+      border-radius: 3px;
+    }
   }
 
   &.selected {
