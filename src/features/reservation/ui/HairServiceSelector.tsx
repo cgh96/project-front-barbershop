@@ -47,7 +47,7 @@ export const HairServiceSelector = () => {
       <ChipSwiper chips={hairServiceList} variant={BaseChipVariant.Primary} />
 
       <h2 className={styles["sub-title"]}>이벤트 메뉴로 선택</h2>
-      <EventMenuSelectButton selectedEvent="이벤트 메뉴 선택" />
+      <EventMenuSelectButton selectedEvent="첫방문 프로모션 20% 할인" />
     </Section>
   );
 };
