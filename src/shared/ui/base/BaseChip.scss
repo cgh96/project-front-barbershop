@@ -9,34 +9,45 @@
   border-radius: 100px;
   border: 1px solid variables.$gray-1400;
 
+  .main-label {
+    display: inline-block;
+    font-size: variables.$font-medium;
+    font-weight: 400;
+  }
+
+  .sub-label {
+    display: inline-block;
+    padding: 4px 10px;
+
+    background-color: variables.$blue-200-alpha10;
+    font-size: variables.$font-x-small;
+    font-weight: bold;
+    color: variables.$white;
+    border-radius: 3px;
+  }
+
   &.primary {
     .main-label {
-      display: inline-block;
-      font-size: variables.$font-medium;
-      font-weight: 400;
+      color: variables.$black;
     }
 
-    .sub-label {
-      display: inline-block;
-      padding: 4px 10px;
+    &.selected {
+      background-color: variables.$primary;
+      border: 1px solid variables.$primary;
 
-      background-color: variables.$blue-200-alpha10;
-      font-size: variables.$font-x-small;
-      font-weight: bold;
-      color: variables.$white;
-      border-radius: 3px;
+      .main-label {
+        font-weight: bold;
+        color: variables.$white;
+      }
     }
   }
 
-  &.selected {
-    background-color: variables.$primary;
-    border: 1px solid variables.$primary;
-
+  &.black {
     .main-label {
-      font-weight: bold;
+      color: variables.$black;
     }
 
-    &.black {
+    &.selected {
       background-color: variables.$black;
       border: 1px solid variables.$black;
 
