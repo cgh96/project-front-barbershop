@@ -1,5 +1,3 @@
-import "./DateReservationModal.scss";
-
 import type { TModalAnimation } from "@shared/types";
 import { ModalAnimation } from "@shared/types";
 import { BaseHeader } from "@shared/ui/base/BaseHeader";
