@@ -37,9 +37,7 @@ export const Calendar = () => {
 
   // 다음 달 날짜 (빈 공간)
   const totalDays = prevDays.length + daysInMonth;
-  console.log(totalDays, "total days");
   const nextDaysCount = totalDays % 7 === 0 ? 0 : 7 - (totalDays % 7);
-  console.log(nextDaysCount, "next days count");
   const nextDays = Array.from({ length: nextDaysCount }, (_, i) => (
     <button
       key={`next-${i}`}
