@@ -1,0 +1,46 @@
+.calendar-header {
+  font-size: variables.$font-x-large;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto repeat(6, 1fr);
+  gap: 12px;
+}
+
+.calendar-weekdays {
+  display: contents;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+.day .selected {
+  background-color: variables.$primary;
+}
+
+.empty {
+  color: variables.$gray-1200;
+}
+
+.dayOfTheWeek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  font-weight: bold;
+}

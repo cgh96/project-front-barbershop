@@ -1,3 +1,85 @@
+import LeftButtonIcon from "@assets/buttons/LButton-icon.svg?react";
+import RightButtonIcon from "@assets/buttons/RButton-icon.svg?react";
+import dayjs from "dayjs";
+import { useState } from "react";
+import { Link } from "react-router";
+
+import styles from "./Calender.module.scss"; // 스타일 모듈 임포트
+
 export const Calendar = () => {
-  // @TODO : Calendar를 만드세요
+  const [currentDate, setCurrentDate] = useState(dayjs());
+
+  const startOfMonth = currentDate.startOf("month");
+  const endOfMonth = currentDate.endOf("month");
+  const daysInMonth = endOfMonth.date();
+  const startDay = startOfMonth.day(); // 1주일의 첫 번째 날을 기준으로 요일
+  const prevMonthDays = startOfMonth.subtract(1, "month").endOf("month").date(); // 이전 달의 마지막 날짜
+  const dayOfTheWeek = ["월", "화", "수", "목", "금", "토", "일"];
+
+  // 이전 달 날짜 (빈 공간)
+  const prevDays = Array.from({ length: startDay }, (_, i) => (
+    <button
+      key={`prev-${i}`}
+      className={`${styles.day} ${styles.empty}`}
+      type="button"
+    >
+      {prevMonthDays - startDay + i + 1}
+    </button>
+  ));
+
+  // 현재 달 날짜
+  const dayArray = Array.from({ length: daysInMonth }, (_, i) => (
+    <button type="button" key={i + 1} className={styles.day}>
+      {i + 1}
+    </button>
+  ));
+
+  // 다음 달 날짜 (빈 공간)
+  const totalDays = prevDays.length + daysInMonth;
+  const nextDaysCount = totalDays % 7 === 0 ? 0 : 7 - (totalDays % 7);
+  const nextDays = Array.from({ length: nextDaysCount }, (_, i) => (
+    <button
+      key={`next-${i}`}
+      className={`${styles.day} ${styles.empty}`}
+      type="button"
+    >
+      {i + 1}
+    </button>
+  ));
+
+  const goToPreviousMonth = () => {
+    setCurrentDate(currentDate.subtract(1, "month"));
+  };
+
+  const goToNextMonth = () => {
+    setCurrentDate(currentDate.add(1, "month"));
+  };
+
+  return (
+    <div className="calendar">
+      <div className={styles["calendar-header"]}>
+        <button type="button" className="prev-btn" onClick={goToPreviousMonth}>
+          <LeftButtonIcon />
+        </button>
+        <div>{currentDate.format("YYYY.MM")}</div>
+        <button type="button" className="next-btn" onClick={goToNextMonth}>
+          <RightButtonIcon />
+        </button>
+      </div>
+      <div className={styles["calendar-body"]}>
+        <div className={styles["calendar-weekdays"]}>
+          {dayOfTheWeek.map(day => (
+            <div key={day} className={styles["dayOfTheWeek"]}>
+              {day}
+            </div>
+          ))}
+        </div>
+        {prevDays}
+        {dayArray}
+        {nextDays}
+      </div>
+
+      <div className="calendar-footer">{/* Calendar Footer UI */}</div>
+    </div>
+  );
 };
