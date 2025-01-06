@@ -2,9 +2,8 @@ import LeftButtonIcon from "@assets/buttons/LButton-icon.svg?react";
 import RightButtonIcon from "@assets/buttons/RButton-icon.svg?react";
 import dayjs from "dayjs";
 import { useState } from "react";
-import { Link } from "react-router";
 
-import styles from "./Calender.module.scss"; // 스타일 모듈 임포트
+import styles from "./Calender.module.scss";
 
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(dayjs());
@@ -12,18 +11,20 @@ export const Calendar = () => {
   const startOfMonth = currentDate.startOf("month");
   const endOfMonth = currentDate.endOf("month");
   const daysInMonth = endOfMonth.date();
-  const startDay = startOfMonth.day(); // 1주일의 첫 번째 날을 기준으로 요일
-  const prevMonthDays = startOfMonth.subtract(1, "month").endOf("month").date(); // 이전 달의 마지막 날짜
+  const startDay = startOfMonth.day();
+  const prevMonthDays = startOfMonth.subtract(1, "month").endOf("month").date();
   const dayOfTheWeek = ["월", "화", "수", "목", "금", "토", "일"];
 
+  const adjustedStartDay = startDay === 0 ? 6 : startDay - 1;
+
   // 이전 달 날짜 (빈 공간)
-  const prevDays = Array.from({ length: startDay }, (_, i) => (
+  const prevDays = Array.from({ length: adjustedStartDay }, (_, i) => (
     <button
       key={`prev-${i}`}
       className={`${styles.day} ${styles.empty}`}
       type="button"
     >
-      {prevMonthDays - startDay + i + 1}
+      {prevMonthDays - adjustedStartDay + i + 1}
     </button>
   ));
 
@@ -36,7 +37,9 @@ export const Calendar = () => {
 
   // 다음 달 날짜 (빈 공간)
   const totalDays = prevDays.length + daysInMonth;
+  console.log(totalDays, "total days");
   const nextDaysCount = totalDays % 7 === 0 ? 0 : 7 - (totalDays % 7);
+  console.log(nextDaysCount, "next days count");
   const nextDays = Array.from({ length: nextDaysCount }, (_, i) => (
     <button
       key={`next-${i}`}
