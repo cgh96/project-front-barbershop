@@ -1,17 +1,33 @@
+.calendar {
+  padding: 16px;
+  font-size: variables.$font-medium;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .calendar-header {
   font-size: variables.$font-x-large;
   font-weight: 700;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.calendar-controls {
   display: flex;
   justify-content: center;
   gap: 12px;
   text-align: center;
 }
+
 .calendar-body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: auto repeat(6, 1fr);
   gap: 12px;
+  justify-items: center;
 }
 
 .calendar-weekdays {
@@ -27,7 +43,7 @@
   height: 42px;
 }
 
-.day .selected {
+.selected {
   background-color: variables.$primary;
 }
 
@@ -43,4 +59,6 @@
   height: 42px;
   text-align: center;
   font-weight: bold;
+  color: variables.$gray-300;
+  opacity: 0.6;
 }
