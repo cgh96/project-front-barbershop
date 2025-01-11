@@ -1,0 +1,13 @@
+.select-btn {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 22px 10px;
+
+  border: 1px solid variables.$gray-1200;
+  border-radius: 8px;
+
+  color: variables.$gray-1200;
+  font-size: variables.$font-medium;
+}

@@ -1,22 +1,22 @@
 import "./BaseHeader.scss";
 
-import { BaseHeaderStyle } from "@shared/types";
+import { BaseHeaderVariant } from "@shared/types";
 
 interface ModalHeaderProps {
-  bg?: string;
+  variant?: string;
   Left?: React.ReactNode;
   Center?: React.ReactNode;
   Right?: React.ReactNode;
 }
 
 export const BaseHeader: React.FC<ModalHeaderProps> = ({
-  bg = BaseHeaderStyle.Primary,
+  variant = BaseHeaderVariant.Primary,
   Left,
   Center,
   Right,
 }) => {
   return (
-    <div className={`header-container ${bg}`}>
+    <div className={`header-container ${variant}`}>
       <div className="left">{Left}</div>
       <div className="center">{Center}</div>
       <div className="right">{Right}</div>

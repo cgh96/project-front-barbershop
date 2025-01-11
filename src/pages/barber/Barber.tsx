@@ -1,4 +1,4 @@
-import { ReservationModal } from "@features/reservation/ui/ReservationModal";
+import { DateReservationModal } from "@features/reservation/ui/DateReservationModal";
 import { useShowModal } from "@shared/hooks/useShowModal";
 import { BaseButtonSize, BaseButtonVariant } from "@shared/types";
 import { BaseButton } from "@shared/ui/base/BaseButton";
@@ -17,10 +17,7 @@ export const Barber = () => {
       />
 
       {shouldShowModal && (
-        <ReservationModal
-          title="날짜로 예약하기"
-          onClickClose={() => toggleShowModal(false)}
-        />
+        <DateReservationModal onClickClose={() => toggleShowModal(false)} />
       )}
     </Page>
   );

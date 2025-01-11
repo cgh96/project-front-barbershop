@@ -1,0 +1,11 @@
+.reservation-section {
+  width: 100%;
+  padding: 24px 16px;
+
+  .title {
+    width: 100%;
+    font-size: variables.$font-medium;
+    font-weight: bold;
+    color: variables.$black;
+  }
+}
