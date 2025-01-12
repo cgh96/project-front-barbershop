@@ -5,7 +5,7 @@ import { BaseButton } from "@shared/ui/base/BaseButton";
 import { Page } from "@shared/ui/layout/page/Page";
 
 export const Barber = () => {
-  const { shouldShowModal, toggleShowModal } = useShowModal();
+  const { shouldShowModal, slideAnimation, toggleShowModal } = useShowModal();
 
   return (
     <Page>
@@ -17,7 +17,10 @@ export const Barber = () => {
       />
 
       {shouldShowModal && (
-        <DateReserveationModal onClickClose={() => toggleShowModal(false)} />
+        <DateReserveationModal
+          animation={slideAnimation}
+          onClickClose={() => toggleShowModal(false)}
+        />
       )}
     </Page>
   );

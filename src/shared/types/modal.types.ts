@@ -1,4 +1,4 @@
-export const ModalAnimation = {
+export const ModalSlideAnimation = {
   SlideUp: "slide-up",
   SlideDown: "slide-down",
   SlideInLeft: "slide-in-left",
@@ -7,5 +7,5 @@ export const ModalAnimation = {
   SlideOutRight: "slide-out-right",
 } as const;
 
-export type TModalAnimation =
-  (typeof ModalAnimation)[keyof typeof ModalAnimation];
+export type TModalSlideAnimation =
+  (typeof ModalSlideAnimation)[keyof typeof ModalSlideAnimation];

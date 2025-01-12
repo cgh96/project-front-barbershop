@@ -1,10 +1,11 @@
 import "./FullScreenModal.scss";
 
-import type { TModalAnimation } from "@shared/types";
+import type { TModalSlideAnimation } from "@shared/types";
 import type { PropsWithChildren } from "react";
 
 export interface BackDropProps extends PropsWithChildren {
-  animation: TModalAnimation;
+  children: React.ReactNode;
+  animation: TModalSlideAnimation;
 }
 
 export const FullScreenModal: React.FC<BackDropProps> = ({
