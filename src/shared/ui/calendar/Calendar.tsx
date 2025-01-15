@@ -71,6 +71,8 @@ export const Calendar = () => {
     <div className={styles["calendar"]}>
       <div className={styles["calendar-header"]}>
         <span>날짜선택</span>
+
+        {/* 날짜 */}
         <div className={styles["calendar-controls"]}>
           <button
             type="button"
@@ -85,7 +87,9 @@ export const Calendar = () => {
           </button>
         </div>
       </div>
+
       <div className={styles["calendar-body"]}>
+        {/* 요일 (월 ~ 금) */}
         <div className={styles["calendar-weekdays"]}>
           {dayOfTheWeek.map(day => (
             <div key={day} className={styles["dayOfTheWeek"]}>
@@ -93,6 +97,8 @@ export const Calendar = () => {
             </div>
           ))}
         </div>
+
+        {/* @COMMNET : prevDays, dayArra, nexDays 별도 컴포넌트로 분리 => 컴포넌트인지 한 눈에 알 수 있으면 더 좋을 것 같아요. 더불어, 컴포넌트 내에 자식 컴포넌트들도 레벨을 맞춰주기 위해서, [요일], [캘린더 컨트롤]도 컴포넌트로 분리 하면 좋을 것 같요. 분리된 컴포넌트들의 위치는 calendar폴더(동일 폴더)로 */}
         {prevDays}
         {dayArray}
         {nextDays}
