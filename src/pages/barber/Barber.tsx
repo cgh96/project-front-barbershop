@@ -1,11 +1,11 @@
-import { DateReserveationModal } from "@features/reservation/ui/DateReservationModal";
+import { DateReservationModal } from "@features/reservation/ui/DateReservationModal";
 import { useShowModal } from "@shared/hooks/useShowModal";
 import { BaseButtonSize, BaseButtonVariant } from "@shared/types";
 import { BaseButton } from "@shared/ui/base/BaseButton";
 import { Page } from "@shared/ui/layout/page/Page";
 
 export const Barber = () => {
-  const { shouldShowModal, slideAnimation, toggleShowModal } = useShowModal();
+  const { shouldShowModal, toggleShowModal } = useShowModal();
 
   return (
     <Page>
@@ -17,9 +17,9 @@ export const Barber = () => {
       />
 
       {shouldShowModal && (
-        <DateReserveationModal
-          animation={slideAnimation}
+        <DateReservationModal
           onClickClose={() => toggleShowModal(false)}
+          animation={"slide-up"}
         />
       )}
     </Page>
