@@ -5,7 +5,7 @@ import { BaseButton } from "@shared/ui/base/BaseButton";
 import { Page } from "@shared/ui/layout/page/Page";
 
 export const Barber = () => {
-  const { shouldShowModal, slideAnimation, toggleShowModal } = useShowModal();
+  const { shouldShowModal, toggleShowModal } = useShowModal();
 
   return (
     <Page>
