@@ -1,3 +1,4 @@
+import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import { useState } from "react";
 
@@ -9,7 +10,7 @@ import { PrevDays } from "./PrevDays";
 import { WeekDays } from "./WeekDays";
 
 export const Calendar = () => {
-  const [currentDate, setCurrentDate] = useState(dayjs());
+  const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
   const [selectedDate, setSelectedDate] = useState<number | null>(
     dayjs().date()
   );
