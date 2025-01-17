@@ -6,7 +6,7 @@ import styles from "./Calender.module.scss";
 import { CurrentDays } from "./CurrentDays";
 import { NextDays } from "./NextDays";
 import { PrevDays } from "./PrevDays";
-import { WeekDays } from "./Weekdays";
+import { WeekDays } from "./WeekDays";
 
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(dayjs());
