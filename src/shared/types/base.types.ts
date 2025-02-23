@@ -20,6 +20,8 @@ export type TBaseButtonSize =
 export const BaseHeaderVariant = {
   Primary: "primary",
   Secondary: "secondary",
+  Disabled: "disabled",
+  Warning: "warning",
 } as const;
 
 export type TBasesHeaderVariant =

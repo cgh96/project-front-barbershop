@@ -21,16 +21,16 @@ export const CheckBoxInput: React.FC<ICheckBoxInputProps> = ({
         id={id}
         className={styles["checkbox"]}
         type="checkbox"
-        checked={true}
+        checked={checked}
         onChange={() => onChange(!checked)}
       />
 
-      <div className={styles["label-box"]}>
+      <label htmlFor={id}>
         <span className={styles["check-icon"]}>
           <CheckIcon aria-hidden="true" />
         </span>
-        <label htmlFor={id}>{children}</label>
-      </div>
+        {children}
+      </label>
     </div>
   );
 };

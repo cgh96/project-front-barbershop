@@ -16,10 +16,13 @@
     }
   }
 
-  .label-box {
+  label {
     display: flex;
-    justify-content: center;
     gap: 5px;
+
+    flex-grow: 1;
+    font-size: variables.$font-large;
+    line-height: 1.24;
 
     .check-icon {
       position: relative;
@@ -36,12 +39,6 @@
         width: 18px;
         height: 18px;
       }
-    }
-
-    label {
-      flex-grow: 1;
-      font-size: variables.$font-large;
-      line-height: 1.24;
     }
   }
 }

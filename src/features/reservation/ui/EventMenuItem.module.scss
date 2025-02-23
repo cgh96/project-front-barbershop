@@ -1,0 +1,41 @@
+.event-row {
+  width: 100%;
+  padding: 0 16px;
+
+  color: variables.$black;
+
+  .content-wrapper {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .img-wrapper {
+    width: 95px;
+    height: 95px;
+
+    background-color: variables.$gray-1300;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text-wrapper {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .title {
+      font-size: variables.$font-small;
+    }
+
+    .description {
+      font-size: variables.$font-x-small;
+    }
+  }
+}

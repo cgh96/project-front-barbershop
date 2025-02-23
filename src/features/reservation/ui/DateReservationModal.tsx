@@ -1,9 +1,8 @@
 import { type TModalSlideAnimation } from "@shared/types";
-import { BaseHeader } from "@shared/ui/base/BaseHeader";
-import { CloseBtn } from "@shared/ui/\bbutton/CloseBtn";
+import { CloseButton } from "@shared/ui/button/CloseButton";
+import { BaseHeader } from "@shared/ui/header/BaseHeader";
 import { BackDrop } from "@shared/ui/modal/BackDrop";
 import { FullScreenModal } from "@shared/ui/modal/FullScreenModal";
-import { createPortal } from "react-dom";
 
 import { HairServiceSelector } from "./HairServiceSelector";
 
@@ -16,17 +15,16 @@ export const DateReserveationModal: React.FC<DateReservationModalProps> = ({
   animation,
   onClickClose,
 }) => {
-  return createPortal(
+  return (
     <BackDrop>
       <FullScreenModal animation={animation}>
         <BaseHeader
-          Left={<CloseBtn onClick={onClickClose} />}
+          Left={<CloseButton onClick={onClickClose} />}
           Center={<span style={{ padding: "13px 0" }}>날짜로 예약하기</span>}
         />
 
         <HairServiceSelector />
       </FullScreenModal>
-    </BackDrop>,
-    document.body
+    </BackDrop>
   );
 };

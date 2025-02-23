@@ -1,0 +1,10 @@
+$modal-header-height: 43px;
+$modal-footer-height: 700px;
+
+.menu-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  overflow: hidden;
+}
