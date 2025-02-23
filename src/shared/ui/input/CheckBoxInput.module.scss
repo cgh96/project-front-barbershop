@@ -1,0 +1,47 @@
+.checkbox-wrapper {
+  position: relative;
+
+  .checkbox {
+    position: absolute;
+    appearance: none;
+
+    width: 24px;
+    height: 24px;
+    border: 1px solid variables.$gray-1200;
+    border-radius: 2px;
+
+    &:checked {
+      background-color: variables.$primary;
+      border: 1px solid variables.$primary;
+    }
+  }
+
+  .label-box {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    .check-icon {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    label {
+      flex-grow: 1;
+      font-size: variables.$font-large;
+      line-height: 1.24;
+    }
+  }
+}
