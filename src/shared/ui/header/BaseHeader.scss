@@ -1,11 +1,11 @@
 .header-container {
   display: flex;
   justify-content: space-between;
-  flex-basis: calc(100% / 3);
 
   width: 100%;
   padding: 13px 15px;
   font-size: variables.$font-medium;
+  font-weight: bold;
 
   &.primary {
     background-color: variables.$black;

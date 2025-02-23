@@ -4,9 +4,9 @@ import {
   BaseButtonVariant,
   BaseChipVariant,
 } from "@shared/types";
-import { BaseButton } from "@shared/ui/base/BaseButton";
-import { BaseChip } from "@shared/ui/base/BaseChip";
-import { Page } from "@shared/ui/layout/page/Page";
+import { BaseButton } from "@shared/ui/button/BaseButton";
+import { BaseChip } from "@shared/ui/chip/BaseChip";
+import { Page } from "@shared/ui/layout/Page";
 import { useNavigate } from "react-router";
 
 export const Home = () => {

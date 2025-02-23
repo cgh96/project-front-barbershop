@@ -1,11 +1,11 @@
 import CloseIcon from "@assets/buttons/x-icon.svg?react";
 
-interface CloseBtnProps {
+interface CloseButtonProps {
   onClick: () => void;
 }
 
 /** X 버튼 */
-export const CloseBtn: React.FC<CloseBtnProps> = ({ onClick }) => {
+export const CloseButton: React.FC<CloseButtonProps> = ({ onClick }) => {
   return (
     <button type="button" onClick={onClick} style={{ marginLeft: "13px" }}>
       <CloseIcon />
